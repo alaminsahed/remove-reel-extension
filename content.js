@@ -1,11 +1,14 @@
 function hideReels() {
     // Hide Facebook Reels
-    const reelsButton = document.querySelector(
+    const reelsButton = document.querySelectorAll(
         'a[href="/reel/?s=bookmark"]'
     );
     if (reelsButton) {
-        reelsButton.style.display = 'none';
+        reelsButton.forEach((reel) => {
+            reel.style.display = 'none';
+        });
     }
+
 
     if (window.location.href.startsWith('https://www.facebook.com/reel/')) {
         window.location.href = 'https://www.facebook.com/';
@@ -14,6 +17,7 @@ function hideReels() {
     if (window.location.href.startsWith('https://www.facebook.com/')) {
         const reelsSelectors = document.querySelectorAll('[aria-label="reel"]');
         reelsSelectors.forEach((reel) => {
+            console.log("reel found")
             reel.style.display = 'none';
         });
     }
@@ -51,3 +55,4 @@ const observer = new MutationObserver((mutations) => {
 // Start observing the body for changes
 observer.observe(document.body, { childList: true, subtree: true });
 
+console.log('Facebook Reels Hider is running');
