@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Hide Facebook Reels",
+  "name": "Hide Reels and Shorts",
   "version": "1.0",
-  "description": "An extension to hide Facebook Reels from your feed.",
+  "description": "An extension to hide Reels and Shorts from your feed.",
   "permissions": ["activeTab", "scripting"],
   "content_scripts": [
     {
