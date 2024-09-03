@@ -17,18 +17,19 @@ function hideReels() {
     if (window.location.href.startsWith('https://www.facebook.com/')) {
         const reelsSelectors = document.querySelectorAll('[aria-label="reel"]');
         reelsSelectors.forEach((reel) => {
-            console.log("reel found")
             reel.style.display = 'none';
         });
     }
 
     // Hide YouTube Shorts
-    const shortsButton = document.querySelector(
+    const shortsButton = document.querySelectorAll(
         'a[title="Shorts"]'
     );
 
     if (shortsButton) {
-        shortsButton.style.display = 'none';
+        shortsButton.forEach((short) => {
+            short.style.display = 'none';
+        });
     }
 
     if (window.location.href.startsWith('https://www.youtube.com/')) {
@@ -55,4 +56,3 @@ const observer = new MutationObserver((mutations) => {
 // Start observing the body for changes
 observer.observe(document.body, { childList: true, subtree: true });
 
-console.log('Facebook Reels Hider is running');
