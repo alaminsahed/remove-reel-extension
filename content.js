@@ -14,12 +14,12 @@ function hideReels() {
     }
 
     // Hide YouTube Shorts
-    if (window.location.href.startsWith('https://www.youtube.com/shorts/')) {
-        console.log("Redirecting YouTube Shorts to homepage");
-        setTimeout(() => {
-            window.location.replace('https://www.youtube.com/');
-        }, 500);
-        return;
+    const shortsButton = document.querySelector(
+        'a[title="Shorts"]'
+    );
+
+    if (shortsButton) {
+        shortsButton.style.display = 'none';
     }
 
     if (window.location.href.startsWith('https://www.youtube.com/')) {
@@ -27,7 +27,7 @@ function hideReels() {
         shortsSelectors.forEach((short) => {
             short.style.display = 'none';
         });
-        console.log('Shorts selectors hidden:', shortsSelectors);
+
     }
 }
 
@@ -46,4 +46,3 @@ const observer = new MutationObserver((mutations) => {
 // Start observing the body for changes
 observer.observe(document.body, { childList: true, subtree: true });
 
-console.log('Observer started, waiting for Reels to appear.');
