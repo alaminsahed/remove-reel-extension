@@ -1,9 +1,10 @@
 function hideReels() {
-
     // Hide Facebook Reels
-    if (window.location.href === 'https://www.facebook.com/reel/') {
-        window.location.href = 'https://www.facebook.com/';
-        return;
+    const reelsButton = document.querySelector(
+        'a[href="/reel/?s=bookmark"]'
+    );
+    if (reelsButton) {
+        reelsButton.style.display = 'none';
     }
 
     if (window.location.href.startsWith('https://www.facebook.com/')) {
