@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Facebook Reels",
+  "version": "1.0",
+  "description": "An extension to hide Facebook Reels from your feed.",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.facebook.com/*", "*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
