@@ -7,6 +7,10 @@ function hideReels() {
         reelsButton.style.display = 'none';
     }
 
+    if (window.location.href.startsWith('https://www.facebook.com/reel/')) {
+        window.location.href = 'https://www.facebook.com/';
+    }
+
     if (window.location.href.startsWith('https://www.facebook.com/')) {
         const reelsSelectors = document.querySelectorAll('[aria-label="reel"]');
         reelsSelectors.forEach((reel) => {
