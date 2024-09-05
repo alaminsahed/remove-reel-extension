@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Hide Reels and Shorts",
   "version": "1.0",
-  "description": "An extension to hide Reels and Shorts from your feed.",
+  "description": "This extension hides Reels on Facebook and Shorts on YouTube, helping to clean up your feed for a better browsing experience.",
   "icons": {
     "16": "icons/icon3.png",
     "48": "icons/icon2.png",
